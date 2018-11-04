@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { memberList } from '../const';
+import { memberList } from '../../const';
 
 class MyDemand extends Component {
     constructor(props) {
@@ -45,11 +45,12 @@ class MyDemand extends Component {
     render() {
         const idList = this.state.idList;
         return(
-            <div>
-                {idList.map(id => 
-                    this.renderSelectDemand(id)
-                )}
-                <div className="addBtn">
+            <div className="myDemand">
+                <div className="title">내가 원하는 것</div>
+                <div className="options">
+                    {idList.map(id => 
+                        this.renderSelectDemand(id)
+                    )}
                     <button onClick={this.onAddSelect}>선택 추가</button>
                 </div>
                 <div className="sendResult">

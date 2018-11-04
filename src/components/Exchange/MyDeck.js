@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Option from './Option';
-import { OPTIONS, versionList, typeList, memberList } from '../const';
+import { OPTIONS, versionList, typeList, memberList } from '../../const';
 
 class MyDeck extends Component {
     constructor(props) {
@@ -27,6 +27,7 @@ class MyDeck extends Component {
         const isSelectedAll = version && type && member;
         return (
             <div className="myDeck" >
+                <div className="title">내가 갖고 있는 것</div>
                 <div className="options">
                     <Option 
                         title={OPTIONS.VERSION} 
@@ -40,9 +41,6 @@ class MyDeck extends Component {
                     {type && 
                     <Option title={OPTIONS.MEMBER} optionList={memberList} slected={member}
                         onChange={this.onChangeOption}/>}
-                </div>
-                <div className="selectedResult">
-                    {`내가 갖고 있는 것 : ${version || ""} ${type || ""} ${member || ""}`}
                 </div>
                 {isSelectedAll && 
                 <div className="sendResult">
